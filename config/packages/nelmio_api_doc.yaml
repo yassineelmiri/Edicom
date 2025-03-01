@@ -1,0 +1,18 @@
+# config/packages/nelmio_api_doc.yaml
+nelmio_api_doc:
+    areas:
+        default:
+            path_patterns: [ ^/api ] # Appliquer à toutes les routes commençant par /api
+    documentation:
+        info:
+            title: API Documentation
+            description: Documentation de l'API Symfony
+            version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer: # Définir le schéma d'authentification JWT
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+        security:
+            - Bearer: [] # Appliquer l'authentification JWT par défaut
